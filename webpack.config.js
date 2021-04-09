@@ -3,8 +3,8 @@ const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin"
 
 module.exports = {
   name: "react-viewpage",
-  mode: "development",
-  devtool: "inline-source-map",
+  mode: "production",
+  devtool: "hidden-source-map",
   resolve: {
     extensions: [".js", ".jsx"],
   },
@@ -21,7 +21,7 @@ module.exports = {
             [
               "@babel/preset-env",
               {
-                targets: { browsers: ["last 2 chrome versions"] },
+                targets: { browsers: ["> 3% in KR"] },
                 debug: true,
               },
             ],
@@ -42,5 +42,10 @@ module.exports = {
   devServer: {
     publicPath: "/dist",
     hot: true,
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
   },
 };
