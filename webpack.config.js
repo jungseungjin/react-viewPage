@@ -1,5 +1,5 @@
 const path = require("path");
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+//const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 module.exports = {
   name: "react-viewpage",
@@ -21,7 +21,7 @@ module.exports = {
             [
               "@babel/preset-env",
               {
-                targets: { browsers: ["> 3% in KR"] },
+                targets: { browsers: ["> 5% in KR"] },
                 debug: true,
               },
             ],
@@ -33,7 +33,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [new ReactRefreshWebpackPlugin()],
+  //plugins: [new ReactRefreshWebpackPlugin()],
   output: {
     path: path.join(__dirname, "dist"),
     filename: "[name].js",

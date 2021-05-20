@@ -4,12 +4,28 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>투닝</title>
+        <link rel="shortcut icon" href="./asset/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./asset/favicon.ico" type="image/x-icon">
+        <meta name="title" content="투닝" /> 
+        <meta name="description" content="튜닝 투닝 자동차 업그레이드 드레스업 퍼포먼스 편의장치 캠핑카" /> 
+        <meta name="keywords" content="튜닝 투닝 자동차 업그레이드 드레스업 퍼포먼스 편의장치 캠핑카"/>
+        <meta name="robots" content="ALL">
+        <meta property="og:url" content="" /> 
+        <meta property="og:type" content="website" /> 
+        <meta property="og:title" content="튜닝은 투닝"/> 
+        <meta property="og:description" content="투닝에서 튜닝을 검색하세요." /> 
+        <meta property="og:image" content="./asset/icon_back.png" />
         <style>
             body{ -ms-overflow-style: none; } ::-webkit-scrollbar { display: none; }
         </style>
     </head>
     <body style="margin: 0;width: 100%;"}>
     <div id="root"></div>
-    <script src="/dist/app.js"></script>
+    <script>
+        // https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/176#issuecomment-683150213
+        window.$RefreshReg$ = () => {};
+        window.$RefreshSig$ = () => () => {};
+      </script>
+    <script src="./dist/app.js"></script>
     </body>
     </html>
