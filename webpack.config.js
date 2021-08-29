@@ -6,7 +6,7 @@ module.exports = {
   mode: "production",
   devtool: "hidden-source-map",
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx","css"],
   },
   entry: {
     app: "./client",
@@ -27,9 +27,13 @@ module.exports = {
             ],
             "@babel/preset-react",
           ],
-          plugins: ["react-refresh/babel"],
+          //plugins: ["react-refresh/babel"],
         },
         exclude: path.join(__dirname, "node_modules"),
+      },
+      {
+          test:/\.css$/,
+          use:['style-loader','css-loader'],
       },
     ],
   },
