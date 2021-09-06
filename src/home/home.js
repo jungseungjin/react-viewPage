@@ -3,6 +3,11 @@ import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "../../theme";
 import { debounce } from "lodash";
 import axios from "axios";
+import Board from "../more/board.js";
+import BoardView from "../more/boardView.js";
+import Term1 from "../term/term1.js";
+import Term2 from "../term/term2.js";
+import moment from "moment";
 const ratio = 0.85;
 const GlobalStyle = createGlobalStyle`	
     @font-face {
@@ -34,11 +39,18 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
     }
 `;
-const ImageNumber1 = (width) => {
+const ImageNumber1 = (width, PageChangeValue) => {
   return (
     <EmptyDiv width={width} number={1}>
       <TopLineDiv width={width}>
-        <TopLineTitle width={width}>투닝</TopLineTitle>
+        <TopLineTitle
+          width={width}
+          onClick={() => {
+            PageChangeValue("home");
+          }}
+        >
+          투닝
+        </TopLineTitle>
         <TopLineButton width={width}>
           <TopLineButtonText
             width={width}
@@ -72,10 +84,10 @@ const ImageNumber1 = (width) => {
     </EmptyDiv>
   );
 };
-const ImageNumber2 = (width) => {
+const ImageNumber2 = (width, PageChangeValue) => {
   return <EmptyDiv width={width} number={2}></EmptyDiv>;
 };
-const ImageNumber3 = (width) => {
+const ImageNumber3 = (width, PageChangeValue) => {
   return (
     <EmptyDiv width={width} number={3}>
       <Div4 width={width}>
@@ -112,7 +124,7 @@ const ImageNumber3 = (width) => {
     </EmptyDiv>
   );
 };
-const ImageNumber4 = (width) => {
+const ImageNumber4 = (width, PageChangeValue) => {
   return (
     <EmptyDiv width={width} number={4}>
       <Number3Div width={width}>
@@ -136,7 +148,7 @@ const ImageNumber4 = (width) => {
     </EmptyDiv>
   );
 };
-const TextNumber1 = (width) => {
+const TextNumber1 = (width, PageChangeValue) => {
   return (
     <TextDiv width={width}>
       <EmptyDivTitle width={width}>
@@ -149,7 +161,7 @@ const TextNumber1 = (width) => {
     </TextDiv>
   );
 };
-const TextNumber2 = (width) => {
+const TextNumber2 = (width, PageChangeValue) => {
   return (
     <TextDiv width={width}>
       <EmptyDivTitle2 width={width}>모든 자동차 튜닝은 투닝에서</EmptyDivTitle2>
@@ -161,7 +173,7 @@ const TextNumber2 = (width) => {
     </TextDiv>
   );
 };
-const TextNumber3 = (width) => {
+const TextNumber3 = (width, PageChangeValue) => {
   return (
     <TextDiv width={width}>
       <EmptyDivTitle3 width={width}>
@@ -176,58 +188,44 @@ const TextNumber3 = (width) => {
     </TextDiv>
   );
 };
-const TextNumber4 = (width, props) => {
+const TextNumber4 = (
+  width,
+  props,
+  PageChangeValue,
+  ChangeBoardViewData,
+  homeNotice
+) => {
   return (
     <EmptyDiv2 width={width}>
       <BottomTopDiv width={width}>
         <BottomTopText width={width}>이벤트 및 공지 안내</BottomTopText>
         <BottomTopBoxDiv width={width}>
-          <BottomTopBoxDivNestedDiv
-            width={width}
-            onClick={() => {
-              props.history.push("/moreview/1");
-            }}
-          >
-            <BottomTopBoxDivNestedDivDiv1 width={width}>
-              <BottomTopBoxDivNestedDivDiv1Span width={width}>
-                '투닝' 시범서비스 오픈
-              </BottomTopBoxDivNestedDivDiv1Span>
-            </BottomTopBoxDivNestedDivDiv1>
-            <BottomTopBoxDivNestedDivDiv2 width={width}>
-              <BottomTopBoxDivNestedDivDiv2Span width={width}>
-                2021년 11월 01일
-              </BottomTopBoxDivNestedDivDiv2Span>
-            </BottomTopBoxDivNestedDivDiv2>
-          </BottomTopBoxDivNestedDiv>
-          <BottomTopBoxDivNestedDiv width={width}>
-            <BottomTopBoxDivNestedDivDiv1 width={width}>
-              <BottomTopBoxDivNestedDivDiv1Span width={width}>
-                '투닝' 시범서비스 오픈
-              </BottomTopBoxDivNestedDivDiv1Span>
-            </BottomTopBoxDivNestedDivDiv1>
-            <BottomTopBoxDivNestedDivDiv2 width={width}>
-              <BottomTopBoxDivNestedDivDiv2Span width={width}>
-                2021년 11월 01일
-              </BottomTopBoxDivNestedDivDiv2Span>
-            </BottomTopBoxDivNestedDivDiv2>
-          </BottomTopBoxDivNestedDiv>
-          <BottomTopBoxDivNestedDiv width={width}>
-            <BottomTopBoxDivNestedDivDiv1 width={width}>
-              <BottomTopBoxDivNestedDivDiv1Span width={width}>
-                '투닝' 시범서비스 오픈
-              </BottomTopBoxDivNestedDivDiv1Span>
-            </BottomTopBoxDivNestedDivDiv1>
-            <BottomTopBoxDivNestedDivDiv2 width={width}>
-              <BottomTopBoxDivNestedDivDiv2Span width={width}>
-                2021년 11월 01일
-              </BottomTopBoxDivNestedDivDiv2Span>
-            </BottomTopBoxDivNestedDivDiv2>
-          </BottomTopBoxDivNestedDiv>
+          {homeNotice.map((item, index) => (
+            <BottomTopBoxDivNestedDiv
+              width={width}
+              onClick={() => {
+                ChangeBoardViewData(item);
+                PageChangeValue("boardView");
+              }}
+            >
+              <BottomTopBoxDivNestedDivDiv1 width={width}>
+                <BottomTopBoxDivNestedDivDiv1Span width={width}>
+                  {item.title}
+                </BottomTopBoxDivNestedDivDiv1Span>
+              </BottomTopBoxDivNestedDivDiv1>
+              <BottomTopBoxDivNestedDivDiv2 width={width}>
+                <BottomTopBoxDivNestedDivDiv2Span width={width}>
+                  {moment(item.createdAt).format("YYYY년 MM월 DD일")}
+                </BottomTopBoxDivNestedDivDiv2Span>
+              </BottomTopBoxDivNestedDivDiv2>
+            </BottomTopBoxDivNestedDiv>
+          ))}
           <BottomTopBoxDivDiv width={width}>
             <BottomTopBoxDivDivButton
               width={width}
               onClick={() => {
-                props.history.push("/more/1");
+                PageChangeValue("board");
+                //props.history.push("/more/1");
               }}
             ></BottomTopBoxDivDivButton>
           </BottomTopBoxDivDiv>
@@ -246,7 +244,8 @@ const TextNumber4 = (width, props) => {
             <BottomBottomDivTextSpan
               width={width}
               onClick={() => {
-                props.history.push("/term1");
+                PageChangeValue("term1");
+                //props.history.push("/term1");
               }}
             >
               이용약관
@@ -254,7 +253,8 @@ const TextNumber4 = (width, props) => {
             <BottomBottomDivTextSpan
               width={width}
               onClick={() => {
-                props.history.push("/term2");
+                PageChangeValue("term2");
+                //props.history.push("/term2");
               }}
             >
               개인정보처리방침
@@ -289,17 +289,128 @@ const Home = (props) => {
   }, []);
   useEffect(() => {});
   const { width } = windowSize;
+  const [page, setPage] = useState("home");
+  const PageChangeValue = (string) => {
+    setPage(string);
+    window.scrollTo(0, 0);
+  };
+  const [homeNotice, setHomeNotice] = useState([]);
+  const HomeNoticeChangeValue = (Array) => {
+    setHomeNotice([...Array]);
+  };
+  const [notice, setNotice] = useState([]);
+  const NoticeChangeValue = (Array) => {
+    setNotice([...Array]);
+  };
+  const [noticePage, setNoticePage] = useState(1);
+  const NoticePageChangeValue = (num) => {
+    setNoticePage(num);
+  };
+  const ChangeBoardViewData = (item) => {
+    setBoardTitle(item.title);
+    setBoardDate(item.createdAt);
+    setBoardContents(item.contents);
+  };
+  const [NoticeCount, setNoticeCount] = useState(0);
+
+  const [boardTitle, setBoardTitle] = useState("");
+  const [boardDate, setBoardDate] = useState("");
+  const [boardContents, setBoardContents] = useState("");
+  const getData = async () => {
+    try {
+      let data = await axios.get(
+        "http://localhost:3000/api/notice/get/owner",
+        //"https://tuuningback.shop/api/notice/get/owner",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          params: { page: noticePage },
+        }
+      );
+      if (data.data.success === true) {
+        if (noticePage === 1) {
+          setHomeNotice([
+            data.data.result[0] || {
+              title: "",
+              createdAt: moment(),
+              contents: "",
+            },
+            data.data.result[1] || {
+              title: "",
+              createdAt: moment(),
+              contents: "",
+            },
+            data.data.result[2] || {
+              title: "",
+              createdAt: moment(),
+              contents: "",
+            },
+          ]);
+        }
+        setNotice(data.data.result);
+        setNoticeCount(data.data.resultCount);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    getData();
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      {ImageNumber1(width)}
-      {TextNumber1(width)}
-      {ImageNumber2(width)}
-      {TextNumber2(width)}
-      {ImageNumber3(width)}
-      {TextNumber3(width)}
-      {ImageNumber4(width)}
-      {TextNumber4(width, props)}
+      {page === "home" ? (
+        <>
+          {ImageNumber1(width, PageChangeValue)}
+          {TextNumber1(width, PageChangeValue)}
+          {ImageNumber2(width, PageChangeValue)}
+          {TextNumber2(width, PageChangeValue)}
+          {ImageNumber3(width, PageChangeValue)}
+          {TextNumber3(width, PageChangeValue)}
+          {ImageNumber4(width, PageChangeValue)}
+          {TextNumber4(
+            width,
+            props,
+            PageChangeValue,
+            ChangeBoardViewData,
+            homeNotice
+          )}
+        </>
+      ) : page === "board" ? (
+        <>
+          <Board
+            PageChangeValue={PageChangeValue}
+            ChangeBoardViewData={ChangeBoardViewData}
+            Notice={notice}
+            NoticeChangeValue={NoticeChangeValue}
+            NoticePage={noticePage}
+            NoticePageChangeValue={NoticePageChangeValue}
+            NoticeCount={NoticeCount}
+          ></Board>
+        </>
+      ) : page === "boardView" ? (
+        <>
+          <BoardView
+            PageChangeValue={PageChangeValue}
+            BoardTitle={boardTitle}
+            BoardDate={boardDate}
+            BoardContents={boardContents}
+          ></BoardView>
+        </>
+      ) : page === "term1" ? (
+        <>
+          <Term1 PageChangeValue={PageChangeValue}></Term1>
+        </>
+      ) : page === "term2" ? (
+        <>
+          <Term2 PageChangeValue={PageChangeValue}></Term2>
+        </>
+      ) : (
+        <></>
+      )}
     </ThemeProvider>
   );
 };
@@ -406,6 +517,7 @@ const TopLineTitle = styled.span`
       ? parseInt((props.width * ratio) / 23) + "px"
       : "13px"};
   font-family: "SDSwagger";
+  cursor: pointer;
 `;
 const TopLineButton = styled.div`
   margin: 0 0 0 auto;

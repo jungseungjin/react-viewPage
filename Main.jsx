@@ -10,11 +10,12 @@ const Main = () => {
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/information" component={Home} />
+                {/* <Route exact path="/information" component={Home} />
                 <Route exact path="/term1" component={Term1} />
                 <Route exact path="/term2" component={Term2} />
                 <Route path="/more/:page" component={Board} />
-                <Route path="/moreview/:id" component={BoardView} /></Switch>
+                <Route path="/moreview/:id" component={BoardView} /> */}
+                </Switch>
         </BrowserRouter>
     );
 };
