@@ -319,8 +319,8 @@ const Home = (props) => {
   const getData = async () => {
     try {
       let data = await axios.get(
-        "http://localhost:3000/api/notice/get/owner",
-        //"https://tuuningback.shop/api/notice/get/owner",
+        //"http://localhost:3000/api/notice/get/owner",
+        "https://tuuningback.shop/api/notice/get/owner",
         {
           headers: {
             "Content-Type": "application/json",
