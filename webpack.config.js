@@ -6,7 +6,7 @@ module.exports = {
   mode: "production",
   devtool: "hidden-source-map",
   resolve: {
-    extensions: [".js", ".jsx","css"],
+    extensions: [".js", ".jsx", "css"],
   },
   entry: {
     app: "./client",
@@ -21,7 +21,7 @@ module.exports = {
             [
               "@babel/preset-env",
               {
-                targets: { browsers: ["> 5% in KR"] },
+                targets: { browsers: ["> 3% in KR"] },
                 debug: true,
               },
             ],
@@ -32,15 +32,15 @@ module.exports = {
         exclude: path.join(__dirname, "node_modules"),
       },
       {
-          test:/\.css$/,
-          use:['style-loader','css-loader'],
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
   //plugins: [new ReactRefreshWebpackPlugin()],
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "[name].js",
+    filename: "[name]2.js",
     publicPath: "/dist",
   },
   devServer: {
