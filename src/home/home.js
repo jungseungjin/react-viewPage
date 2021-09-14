@@ -234,11 +234,11 @@ const TextNumber4 = (
       <BottomBottomDiv width={width}>
         <BottomBottomDivDiv width={width}>
           <BottomBottomDivText width={width} number={1}>
-            오토베이크 | 대표이사 : 백준열 | 메일 : info@tuuning.co.kr{" "}
+            오토베이크 | 대표이사 : 백준열 | 메일 : help@tuuning.co.kr{" "}
           </BottomBottomDivText>
           <BottomBottomDivText width={width} number={2}>
             주소 :광주광역시 서구 상무대로 799, 국제빌딩 3층 | 전화 :
-            010-2902-9497
+            010-2557-9497
           </BottomBottomDivText>
           <BottomBottomDivText width={width} number={3}>
             <BottomBottomDivTextSpan
@@ -259,7 +259,15 @@ const TextNumber4 = (
             >
               개인정보처리방침
             </BottomBottomDivTextSpan>
-            <BottomBottomDivTextSpan width={width}>
+            <BottomBottomDivTextSpan
+              width={width}
+              onClick={() => {
+                window.open(
+                  "http://www.ftc.go.kr/bizCommPop.do?wrkr_no=6370701722",
+                  "_blank"
+                );
+              }}
+            >
               사업자정보확인
             </BottomBottomDivTextSpan>
           </BottomBottomDivText>
