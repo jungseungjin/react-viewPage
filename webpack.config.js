@@ -40,7 +40,7 @@ module.exports = {
   //plugins: [new ReactRefreshWebpackPlugin()],
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "[name]2.js",
+    filename: "[name]3.js",
     publicPath: "/dist",
   },
   devServer: {
