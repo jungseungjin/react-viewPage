@@ -92,10 +92,11 @@ const ImageNumber3 = (width, PageChangeValue) => {
     <EmptyDiv width={width} number={3}>
       <Div4 width={width}>
         <TextDivDiv width={width} number={1}>
-          <TextDivTitle width={width}>드레스업</TextDivTitle>
+          <TextDivTitle width={width}>드레스업•차량관리</TextDivTitle>
           <TextDivContent width={width}>
-            드레스업 튜닝은 나의 자동차를 취향대로 꾸밀 수 있도록 도와주는
-            튜닝입니다. 비교적 적은 튜닝 대비 많은 효과를 줄 수 있습니다.
+            드레스업•차량관리 튜닝은 나의 자동차를 취향대로 꾸밀 수 있도록
+            도와주는 튜닝입니다. 비교적 적은 튜닝 대비 많은 효과를 줄 수
+            있습니다.
           </TextDivContent>
         </TextDivDiv>
         <TextDivDiv width={width} number={2}>
@@ -113,7 +114,7 @@ const ImageNumber3 = (width, PageChangeValue) => {
           </TextDivContent>
         </TextDivDiv>
         <TextDivDiv width={width} number={4}>
-          <TextDivTitle width={width}>캠핑카</TextDivTitle>
+          <TextDivTitle width={width}>캠핑/레저</TextDivTitle>
           <TextDivContent width={width}>
             답답한 도심을 벗어나 자동차와 함께하는 캠핑라이프를 즐기기 위해
             간단한 차박을 위한 튜닝부터 다양한 옵션이 들어간 캠핑카 튜닝을
@@ -155,8 +156,8 @@ const TextNumber1 = (width, PageChangeValue) => {
         자동차 튜닝을 위해<br></br>발품을 파는 일은 그만
       </EmptyDivTitle>
       <EmptyDivSubTitle width={width}>
-        투명하고 선별된 자동차 튜닝정보를 쉽게 찾을 수 있도록 투닝이 실력있는
-        사장님들의 작업들을 모았습니다.
+        투명하고 선별된 자동차 튜닝정보를 쉽게 찾을 수 있도록<br></br>투닝이
+        실력있는 사장님들의 작업들을 모았습니다.
       </EmptyDivSubTitle>
     </TextDiv>
   );
@@ -166,9 +167,9 @@ const TextNumber2 = (width, PageChangeValue) => {
     <TextDiv width={width}>
       <EmptyDivTitle2 width={width}>모든 자동차 튜닝은 투닝에서</EmptyDivTitle2>
       <EmptyDivSubTitle2 width={width}>
-        틴팅, 블랙박스 시공 등 편의장치부터<br></br>다양한 드레스업, 퍼포먼스,
-        캠핑카 튜닝까지<br></br>쉽게 해결할 수 있도록 선별되고 투명한 튜닝작업을
-        모으고 있습니다.
+        틴팅, 블랙박스 시공 등 편의장치부터<br></br>다양한 드레스업•차량관리,
+        퍼포먼스, 캠핑카 튜닝까지<br></br>쉽게 해결할 수 있도록 선별되고 투명한
+        튜닝작업을 모으고 있습니다.
       </EmptyDivSubTitle2>
     </TextDiv>
   );
