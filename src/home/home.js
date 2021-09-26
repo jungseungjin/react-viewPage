@@ -114,7 +114,7 @@ const ImageNumber3 = (width, PageChangeValue) => {
           </TextDivContent>
         </TextDivDiv>
         <TextDivDiv width={width} number={4}>
-          <TextDivTitle width={width}>레저·캠핑</TextDivTitle>
+          <TextDivTitle width={width}>캠핑·레저</TextDivTitle>
           <TextDivContent width={width}>
             답답한 도심을 벗어나 자동차와 함께하는 캠핑라이프를 즐기기 위해
             간단한 차박을 위한 튜닝부터 다양한 옵션이 들어간 캠핑카 튜닝을
