@@ -92,9 +92,9 @@ const ImageNumber3 = (width, PageChangeValue) => {
     <EmptyDiv width={width} number={3}>
       <Div4 width={width}>
         <TextDivDiv width={width} number={1}>
-          <TextDivTitle width={width}>드레스업•차량관리</TextDivTitle>
+          <TextDivTitle width={width}>드레스업·차량관리</TextDivTitle>
           <TextDivContent width={width}>
-            드레스업•차량관리 튜닝은 나의 자동차를 취향대로 꾸밀 수 있도록
+            드레스업·차량관리 튜닝은 나의 자동차를 취향대로 꾸밀 수 있도록
             도와주는 튜닝입니다. 비교적 적은 튜닝 대비 많은 효과를 줄 수
             있습니다.
           </TextDivContent>
@@ -114,7 +114,7 @@ const ImageNumber3 = (width, PageChangeValue) => {
           </TextDivContent>
         </TextDivDiv>
         <TextDivDiv width={width} number={4}>
-          <TextDivTitle width={width}>캠핑/레저</TextDivTitle>
+          <TextDivTitle width={width}>레저·캠핑</TextDivTitle>
           <TextDivContent width={width}>
             답답한 도심을 벗어나 자동차와 함께하는 캠핑라이프를 즐기기 위해
             간단한 차박을 위한 튜닝부터 다양한 옵션이 들어간 캠핑카 튜닝을
@@ -167,7 +167,7 @@ const TextNumber2 = (width, PageChangeValue) => {
     <TextDiv width={width}>
       <EmptyDivTitle2 width={width}>모든 자동차 튜닝은 투닝에서</EmptyDivTitle2>
       <EmptyDivSubTitle2 width={width}>
-        틴팅, 블랙박스 시공 등 편의장치부터<br></br>다양한 드레스업•차량관리,
+        틴팅, 블랙박스 시공 등 편의장치부터<br></br>다양한 드레스업·차량관리,
         퍼포먼스, 캠핑카 튜닝까지<br></br>쉽게 해결할 수 있도록 선별되고 투명한
         튜닝작업을 모으고 있습니다.
       </EmptyDivSubTitle2>
