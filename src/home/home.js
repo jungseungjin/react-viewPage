@@ -94,9 +94,9 @@ const ImageNumber3 = (width, PageChangeValue) => {
         <TextDivDiv width={width} number={1}>
           <TextDivTitle width={width}>드레스업·차량관리</TextDivTitle>
           <TextDivContent width={width}>
-            드레스업·차량관리 튜닝은 나의 자동차를 취향대로 꾸밀 수 있도록
-            도와주는 튜닝입니다. 비교적 적은 튜닝 대비 많은 효과를 줄 수
-            있습니다.
+            드레스업 튜닝과 차량관리는<br></br>나의 자동차를 취향대로 꾸밀 수
+            있고,<br></br>
+            기분 좋은 자동차 생활을 즐길 수 있게<br></br>도와줍니다.
           </TextDivContent>
         </TextDivDiv>
         <TextDivDiv width={width} number={2}>
@@ -116,9 +116,9 @@ const ImageNumber3 = (width, PageChangeValue) => {
         <TextDivDiv width={width} number={4}>
           <TextDivTitle width={width}>캠핑·레저</TextDivTitle>
           <TextDivContent width={width}>
-            답답한 도심을 벗어나 자동차와 함께하는 캠핑라이프를 즐기기 위해
-            간단한 차박을 위한 튜닝부터 다양한 옵션이 들어간 캠핑카 튜닝을
-            경험해보세요.
+            답답한 도심을 벗어나 자동차와 함께<br></br>하는 캠핑·레저 라이프를
+            즐기기 위해<br></br>간단한 차박을 위한 튜닝부터 다양한<br></br>
+            기능이 들어간 캠핑·레저 튜닝을 경험해보세요.
           </TextDivContent>
         </TextDivDiv>
       </Div4>
@@ -153,11 +153,10 @@ const TextNumber1 = (width, PageChangeValue) => {
   return (
     <TextDiv width={width}>
       <EmptyDivTitle width={width}>
-        자동차 튜닝을 위해<br></br>발품을 파는 일은 그만
+        소중한 나의 자동차를<br></br>튜닝을 하기 위해 고민이 많으셨죠?
       </EmptyDivTitle>
       <EmptyDivSubTitle width={width}>
-        투명하고 선별된 자동차 튜닝정보를 쉽게 찾을 수 있도록<br></br>투닝이
-        실력있는 사장님들의 작업들을 모았습니다.
+        여러분의 고민을 해결하기 위해 사장님들의 작업을 한 곳에 모았습니다.
       </EmptyDivSubTitle>
     </TextDiv>
   );
@@ -167,9 +166,9 @@ const TextNumber2 = (width, PageChangeValue) => {
     <TextDiv width={width}>
       <EmptyDivTitle2 width={width}>모든 자동차 튜닝은 투닝에서</EmptyDivTitle2>
       <EmptyDivSubTitle2 width={width}>
-        틴팅, 블랙박스 시공 등 편의장치부터<br></br>다양한 드레스업·차량관리,
-        퍼포먼스, 캠핑카 튜닝까지<br></br>쉽게 해결할 수 있도록 선별되고 투명한
-        튜닝작업을 모으고 있습니다.
+        틴팅, 블랙박스 시공 등 편의장치부터<br></br>드레스업·차량관리, 퍼포먼스,
+        캠핑·레저 튜닝까지<br></br>쉽게 해결할 수 있도록 투닝이 열심히 뛰고
+        있습니다.
       </EmptyDivSubTitle2>
     </TextDiv>
   );
@@ -238,7 +237,7 @@ const TextNumber4 = (
             오토베이크 | 대표이사 : 백준열 | 메일 : help@tuuning.co.kr{" "}
           </BottomBottomDivText>
           <BottomBottomDivText width={width} number={2}>
-            주소 :광주광역시 서구 상무대로 799, 국제빌딩 3층 | 전화 :
+            주소 : 서울특별시 서초구 매헌로 16 하이브랜드 1312호 | 전화 :
             010-2557-9497
           </BottomBottomDivText>
           <BottomBottomDivText width={width} number={3}>
@@ -459,7 +458,7 @@ const EmptyDivTitle = styled.div`
 const EmptyDivSubTitle = styled.div`
   font-family: "NanumSquareRegular";
   text-align: center;
-  width: ${(props) => parseInt(props.width / 2.3) + "px"};
+  width: ${(props) => parseInt(props.width / 2.2) + "px"};
   font-size: ${(props) => parseInt((props.width * ratio) / 53.3) + "px"};
   line-height: ${(props) =>
     parseInt((props.width * ratio) / 35) > 13

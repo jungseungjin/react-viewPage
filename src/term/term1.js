@@ -1188,7 +1188,7 @@ const TextNumber4 = (width, props) => {
             오토베이크 | 대표이사 : 백준열 | 메일 : help@tuuning.co.kr{" "}
           </BottomBottomDivText>
           <BottomBottomDivText width={width} number={2}>
-            주소 :광주광역시 서구 상무대로 799, 국제빌딩 3층 | 전화 :
+            주소 : 서울특별시 서초구 매헌로 16 하이브랜드 1312호 | 전화 :
             010-2557-9497
           </BottomBottomDivText>
           <BottomBottomDivText width={width} number={3}>
