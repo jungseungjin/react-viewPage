@@ -55,7 +55,7 @@ const ImageNumber1 = (width, props) => {
 const TextNumber4 = (width, props) => {
   return (
     <EmptyDiv2 width={width}>
-      <BottomTopDiv width={width}>
+      {/* <BottomTopDiv width={width}>
         <BottomTopBoxDiv width={width}>
           <BoardDiv width={width}>
             <BoardTitle width={width}>{props.BoardTitle}</BoardTitle>
@@ -74,7 +74,7 @@ const TextNumber4 = (width, props) => {
             목록보기
           </BoardButton>
         </BottomTopBoxDiv>
-      </BottomTopDiv>
+      </BottomTopDiv> */}
       <BottomBottomDiv width={width}>
         <BottomBottomDivDiv width={width}>
           <BottomBottomDivText width={width} number={1}>

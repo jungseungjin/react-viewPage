@@ -57,7 +57,7 @@ const ImageNumber1 = (width, props) => {
 const TextNumber4 = (width, props, PagenationChangeValue) => {
   return (
     <EmptyDiv2 width={width}>
-      <BottomTopDiv width={width}>
+      {/* <BottomTopDiv width={width}>
         <BottomTopText width={width}>이벤트 및 공지 안내</BottomTopText>
         <BottomTopBoxDiv width={width}>
           {props.Notice.map((item, index) => (
@@ -82,7 +82,7 @@ const TextNumber4 = (width, props, PagenationChangeValue) => {
             />
           </PageDiv>
         </BottomTopBoxDiv>
-      </BottomTopDiv>
+      </BottomTopDiv> */}
       <BottomBottomDiv width={width}>
         <BottomBottomDivDiv width={width}>
           <BottomBottomDivText width={width} number={1}>
