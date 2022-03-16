@@ -43,14 +43,20 @@ const ImageNumber1 = (width, PageChangeValue) => {
   return (
     <EmptyDiv width={width} number={1}>
       <TopLineDiv width={width}>
-        <TopLineTitle
-          width={width}
+        <img
+          src={`./asset/img/tuuning.png`}
+          style={{
+            width: `${(width * ratio) / 12}px`,
+            height: `${(width * ratio) / 12}px`,
+            marginTop: `${(width * ratio) / 24}px`,
+            marginBottom: `-${(width * ratio) / 24}px`,
+            cursor: "pointer",
+          }}
+          alt={"로고"}
           onClick={() => {
             PageChangeValue("home");
           }}
-        >
-          투닝
-        </TopLineTitle>
+        ></img>
         <TopLineButton width={width}>
           <TopLineButtonText
             width={width}
@@ -78,8 +84,24 @@ const ImageNumber1 = (width, PageChangeValue) => {
       </TopLineMessage>
       <TopLineMessage2 width={width}>투닝을 사용해보세요.</TopLineMessage2>
       <AppButtonDiv width={width}>
-        <AppButton width={width}></AppButton>
-        <AppButton2 width={width}></AppButton2>
+        <AppButton
+          width={width}
+          onClick={() => {
+            window.open(
+              "https://play.google.com/store/apps/details?id=com.tuuning",
+              "_blank"
+            );
+          }}
+        ></AppButton>
+        <AppButton2
+          width={width}
+          onClick={() => {
+            window.open(
+              "https://apps.apple.com/us/app/%ED%88%AC%EB%8B%9D/id1597705378",
+              "_blank"
+            );
+          }}
+        ></AppButton2>
       </AppButtonDiv>
     </EmptyDiv>
   );
@@ -137,14 +159,40 @@ const ImageNumber4 = (width, PageChangeValue) => {
       </Number3Div>
       <Number3Div2 width={width}>
         <Number3ButtonDiv width={width}>
-          <Number3Button width={width} number={1}></Number3Button>
+          <Number3Button
+            width={width}
+            number={1}
+            onClick={() => {
+              window.open(
+                "https://play.google.com/store/apps/details?id=com.tuuning",
+                "_blank"
+              );
+            }}
+          ></Number3Button>
         </Number3ButtonDiv>
         <Number3ButtonDiv width={width}>
-          <Number3Button width={width} number={2}></Number3Button>
+          <Number3Button
+            width={width}
+            number={2}
+            onClick={() => {
+              window.open(
+                "https://apps.apple.com/us/app/%ED%88%AC%EB%8B%9D/id1597705378",
+                "_blank"
+              );
+            }}
+          ></Number3Button>
         </Number3ButtonDiv>
       </Number3Div2>
       <Number3Div3 width={width}>
-        <Number3Div3Button width={width}></Number3Div3Button>
+        <Number3Div3Button
+          width={width}
+          onClick={() => {
+            window.open(
+              "https://docs.google.com/forms/d/e/1FAIpQLSeBVJO7J0FB9-jnG7sZJwtbo0eUM9frzR3NGSM_AmIZVwdaQw/viewform?vc=0&c=0&w=1&flr=0",
+              "_blank"
+            );
+          }}
+        ></Number3Div3Button>
       </Number3Div3>
     </EmptyDiv>
   );
@@ -197,7 +245,7 @@ const TextNumber4 = (
 ) => {
   return (
     <EmptyDiv2 width={width}>
-      <BottomTopDiv width={width}>
+      {/* <BottomTopDiv width={width}>
         <BottomTopText width={width}>이벤트 및 공지 안내</BottomTopText>
         <BottomTopBoxDiv width={width}>
           {homeNotice.map((item, index) => (
@@ -230,7 +278,7 @@ const TextNumber4 = (
             ></BottomTopBoxDivDivButton>
           </BottomTopBoxDivDiv>
         </BottomTopBoxDiv>
-      </BottomTopDiv>
+      </BottomTopDiv> */}
       <BottomBottomDiv width={width}>
         <BottomBottomDivDiv width={width}>
           <BottomBottomDivText width={width} number={1}>
@@ -328,7 +376,7 @@ const Home = (props) => {
     try {
       let data = await axios.get(
         //"http://localhost:3000/api/notice/get/owner",
-        "https://tuuningback.shop/api/notice/get/owner",
+        "https://ttuning.shop/api/notice/get/owner",
         {
           headers: {
             "Content-Type": "application/json",
@@ -433,7 +481,7 @@ const EmptyDiv = styled.div`
 `;
 const EmptyDiv2 = styled.div`
   width: ${(props) => parseFloat(props.width) + "px"};
-  height: ${(props) => parseFloat(props.width / 1.45) + "px"};
+  /* height: ${(props) => parseFloat(props.width / 1.45) + "px"}; */
   background-size: cover;
   background-image: url(${(props) =>
     props.number ? `./asset/img/${props.number}.jpg` : null});
@@ -518,17 +566,17 @@ const TopLineDiv = styled.div`
   flex-direction: row;
 `;
 const TopLineTitle = styled.span`
-  margin-top: ${(props) => parseInt(props.width / 31) + "px"};
+  /* margin-top: ${(props) => parseInt(props.width / 31) + "px"};
   font-size: ${(props) => parseInt((props.width * ratio) / 24) + "px"};
   line-height: ${(props) =>
     parseInt((props.width * ratio) / 23) > 13
       ? parseInt((props.width * ratio) / 23) + "px"
       : "13px"};
-  font-family: "SDSwagger";
+  font-family: "SDSwagger"; */
   cursor: pointer;
 `;
 const TopLineButton = styled.div`
-  margin: 0 0 0 auto;
+  margin: ${(props) => parseInt(props.width / 24) + "px"} 0 0 auto;
   display: flex;
   align-items: flex-end;
 `;
